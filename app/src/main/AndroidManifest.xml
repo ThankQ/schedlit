@@ -17,15 +17,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".chooseSchool"
-<<<<<<< HEAD
-            android:parentActivityName=".loginPage" >
-
-=======
-            android:parentActivityName=".loginPage">
-            
->>>>>>> refs/remotes/origin/master
-        </activity>
     </application>
 
 </manifest>

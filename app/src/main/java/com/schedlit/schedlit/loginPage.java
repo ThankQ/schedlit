@@ -14,9 +14,6 @@ import com.firebase.client.ValueEventListener;
 
 public class loginPage extends AppCompatActivity {
 
-<<<<<<< HEAD
-
-=======
     //EditText pwordEditText;
     Button logInButton;
     Button signUpButton;
@@ -24,15 +21,10 @@ public class loginPage extends AppCompatActivity {
     EditText pwordEditText;
     String emailAddress;
     String password;
->>>>>>> refs/remotes/origin/master
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
-<<<<<<< HEAD
-
-
 
     }
 
@@ -40,7 +32,6 @@ public class loginPage extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-=======
         emailEditText =  (EditText) findViewById(R.id.emailEditText);
         pwordEditText = (EditText) findViewById(R.id.pwordEditText);
         logInButton = (Button) findViewById(R.id.logInButton);
@@ -54,13 +45,7 @@ public class loginPage extends AppCompatActivity {
         password = pwordEditText.getText().toString();
         boolean successfulLogIn  = true;
         if (successfulLogIn){
-            startActivity(new Intent(getApplicationContext(), chooseSchool.class));
 
         }
-
-
-    }
->>>>>>> refs/remotes/origin/master
-
     }
 }
