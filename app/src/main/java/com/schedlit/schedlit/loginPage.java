@@ -1,15 +1,44 @@
 package com.schedlit.schedlit;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class loginPage extends AppCompatActivity {
+
+    //EditText pwordEditText;
+    Button logInButton;
+    Button signUpButton;
+    EditText emailEditText;
+    EditText pwordEditText;
+    String emailAddress;
+    String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
+        emailEditText =  (EditText) findViewById(R.id.emailEditText);
+        pwordEditText = (EditText) findViewById(R.id.pwordEditText);
+        logInButton = (Button) findViewById(R.id.logInButton);
+        signUpButton = (Button) findViewById(R.id.signUpButton);
+
     }
 
+    public void onLogInClick(View view)
+    {
+        emailAddress = emailEditText.getText().toString();
+        password = pwordEditText.getText().toString();
+        boolean successfulLogIn  = true;
+        if (successfulLogIn){
+            startActivity(new Intent(getApplicationContext(), chooseSchool.class));
+
+        }
+
+
+    }
 
 }
