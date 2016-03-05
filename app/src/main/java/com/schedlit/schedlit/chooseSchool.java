@@ -2,18 +2,17 @@ package com.schedlit.schedlit;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.EditText;
 
-public class loginPage extends AppCompatActivity {
-    EditText emailEditText;
-    EditText pwordEditText;
-    
+public class chooseSchool extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_page);
+        setContentView(R.layout.activity_choose_school);
     }
 
+    public void getSchoolList()
+    {
 
+    }
 }
