@@ -3,4 +3,7 @@
     <string name="title_activity_user_home">userHome</string>
     <string name="homePagetTitle">My Home</string>
     <string name="hpClassesLabel">\"My Classes\"</string>
+    <string name="title_activity_class_page">classPage</string>
+    <string name="title_activity_class_search">classSearch</string>
+    <string name="title_activity_event_page">eventPage</string>
 </resources>
