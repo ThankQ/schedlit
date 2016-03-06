@@ -21,23 +21,14 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <SearchView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/classSearchView"
-        android:layout_below="@+id/classSearchLabel"
-        android:layout_toEndOf="@+id/classSearchView"
-        android:queryHint="Search For Classes" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Can&apos;t Find Your Class? Add It Here!"
         android:id="@+id/noClassLabel"
-        android:layout_below="@+id/classSearchView"
-        android:layout_marginTop="130dp"
-        android:layout_alignParentEnd="true" />
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -65,5 +56,12 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="39dp"
         android:onClick="onAddClassClick" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/listViewHeight"
+        android:id="@+id/lvSchoolClassList"
+        android:layout_below="@+id/classSearchLabel"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
