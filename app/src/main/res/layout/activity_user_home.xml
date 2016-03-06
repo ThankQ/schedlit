@@ -7,13 +7,6 @@
     tools:context="com.schedlit.schedlit.userHome"
     android:onClick="onSearchForClassClick">
 
-
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> refs/remotes/origin/master
     <include layout="@layout/content_user_home" />
 
 </android.support.design.widget.CoordinatorLayout>
