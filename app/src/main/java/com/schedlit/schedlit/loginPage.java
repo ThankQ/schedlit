@@ -46,14 +46,9 @@ public class loginPage extends AppCompatActivity {
         password = pwordEditText.getText().toString();
         boolean successfulLogIn  = true;
         if (successfulLogIn){
-<<<<<<< HEAD
             startActivity(new Intent(getApplicationContext(), userHome.class));
-=======
->>>>>>> origin/master
-
         }
     }
-<<<<<<< HEAD
 
     public void onSignUpClick(View view)
     {
@@ -66,7 +61,4 @@ public class loginPage extends AppCompatActivity {
         Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
         startActivity(launchBrowser);
     }
-
-=======
->>>>>>> origin/master
 }
