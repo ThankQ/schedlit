@@ -15,7 +15,6 @@ import com.firebase.client.ValueEventListener;
 
 public class loginPage extends AppCompatActivity {
 
-    //EditText pwordEditText;
     Button logInButton;
     Button signUpButton;
     EditText emailEditText;
@@ -52,7 +51,7 @@ public class loginPage extends AppCompatActivity {
 
     public void onSignUpClick(View view)
     {
-        goToUrl("https://www.google.com/");
+        goToUrl("http://schedlit.me/NewUser");
     }
 
 
