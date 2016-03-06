@@ -68,7 +68,7 @@ public class loginPage extends AppCompatActivity {
 
     public void onSignUpClick(View view)
     {
-        goToUrl("http://schedlit.me/NewUser");
+        goToUrl("https://noaharmiger.github.io/NewUser");
     }
 
 

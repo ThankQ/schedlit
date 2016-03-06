@@ -4,4 +4,5 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="listViewHeight">150sp</dimen>
+    <dimen name="lvClassHeight">150sp</dimen>
 </resources>

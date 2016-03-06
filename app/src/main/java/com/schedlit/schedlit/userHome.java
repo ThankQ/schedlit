@@ -21,13 +21,15 @@ import java.util.ArrayList;
 public class userHome extends AppCompatActivity {
     ListView userEventList;
     ListView userClassList;
-    Button classSearchButton;
+
     ArrayList<String> myClassesArray;
     ArrayAdapter<String> myClassesAdapter;
     ArrayList<String> myEventsArray;
     ArrayAdapter<String> myEventsAdapter;
+
     String mEmailAddress;
-    Firebase mRef;
+    private Firebase mRef;
+    private Firebase mUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,12 +49,13 @@ public class userHome extends AppCompatActivity {
         super.onStart();
         mRef = new Firebase("https://testfb342016.firebaseio.com/UsersList");
 
-        mRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        mRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot i : dataSnapshot.getChildren()) {
                     if (i.child("EmailAddress").getValue().equals(mEmailAddress)) {
                         myClassesArray = new ArrayList<>();
+                        myClassesArray.clear();
                         for (DataSnapshot x : i.getChildren()) {
                             if (x.child("Class").getValue() != null)
                                 myClassesArray.add((String) x.child("Class").getValue());
@@ -95,7 +98,9 @@ public class userHome extends AppCompatActivity {
     }
 
     public void onSearchForClassClick(View view){
-        startActivity(new Intent(getApplicationContext(), classSearch.class));
+        Intent intent = new Intent(getApplicationContext(), classSearch.class);
+        intent.putExtra("EmailAddress", mEmailAddress);
+        startActivity(intent);
 
     }
 
