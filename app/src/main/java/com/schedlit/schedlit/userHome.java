@@ -10,6 +10,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
+
 import java.util.ArrayList;
 
 public class userHome extends AppCompatActivity {
@@ -20,40 +25,59 @@ public class userHome extends AppCompatActivity {
     ArrayAdapter<String> myClassesAdapter;
     ArrayList<String> myEventsArray;
     ArrayAdapter<String> myEventsAdapter;
+    String mEmailAddress;
+    Firebase mRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_home);
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
+
+        Bundle extras = getIntent().getExtras();
+        mEmailAddress = extras.getString("emailAddress");
+
         userEventList = (ListView) findViewById(R.id.userEventList);
         userClassList = (ListView) findViewById(R.id.userClassList);
-        updateClassList();
+
+        Firebase.setAndroidContext(this);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mRef = new Firebase("https://testfb342016.firebaseio.com/UsersList");
+
+        mRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot i : dataSnapshot.getChildren()) {
+                    if (i.child("EmailAddress").getValue().equals(mEmailAddress)) {
+                        myClassesArray = new ArrayList<>();
+                        for (DataSnapshot x : i.getChildren()) {
+                            if (x.child("Class").getValue() != null)
+                                myClassesArray.add((String) x.child("Class").getValue());
+                        }
+                        updateClassList();
+                        break;
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
         updateEventList();
-        userClassList.setAdapter(myClassesAdapter);
+
         userEventList.setAdapter(myEventsAdapter);
-
-
     }
 
     public void updateClassList(){
-        myClassesArray = new ArrayList<String>();
-        myClassesArray.add("test 1");
-        myClassesArray.add("test 2");
-        myClassesArray.add("test 3");
-        myClassesArray.add("test 4");
-        myClassesArray.add("test 5");
-        myClassesArray.add("test 6");
-        myClassesArray.add("test 7");
-        myClassesArray.add("test 8");
-        myClassesArray.add("test 9");
-        myClassesArray.add("test 10");
-
-        myClassesAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, myClassesArray );
-
+        myClassesAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1, myClassesArray );
+        userClassList.setAdapter(myClassesAdapter);
     }
     public void updateEventList(){
-        myEventsArray = new ArrayList<String>();
+        myEventsArray = new ArrayList<>();
         myEventsArray.add("test 1");
         myEventsArray.add("test 2");
         myEventsArray.add("test 3");
@@ -65,7 +89,7 @@ public class userHome extends AppCompatActivity {
         myEventsArray.add("test 9");
 
 
-        myEventsAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, myEventsArray );
+        myEventsAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1, myEventsArray );
 
     }
 

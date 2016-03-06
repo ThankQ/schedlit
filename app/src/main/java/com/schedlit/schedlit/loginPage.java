@@ -61,7 +61,9 @@ public class loginPage extends AppCompatActivity {
         });
         if(successfulLogin)
         {
-            startActivity(new Intent(getApplicationContext(), userHome.class));
+            Intent intent = new Intent(getApplicationContext(), userHome.class);
+            intent.putExtra("emailAddress", emailAddress);
+            startActivity(intent);
         }
     }
 
