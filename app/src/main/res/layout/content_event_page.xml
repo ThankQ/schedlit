@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.schedlit.schedlit.eventPage"
+    tools:showIn="@layout/activity_event_page">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Event Details"
+        android:id="@+id/eventDetailsLabel"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Name"
+        android:id="@+id/nameLabel"
+        android:layout_below="@+id/eventDetailsLabel"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="My Event"
+        android:id="@+id/myEventNameLabel"
+        android:layout_below="@+id/nameLabel"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Date/Time"
+        android:id="@+id/dateTimeLabel"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/myEventNameLabel"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="My Date/Time"
+        android:id="@+id/myDTLabel"
+        android:layout_below="@+id/dateTimeLabel"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Location"
+        android:id="@+id/locationLabel"
+        android:layout_alignTop="@+id/nameLabel"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="32dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="My Location"
+        android:id="@+id/myLocationLabel"
+        android:layout_below="@+id/locationLabel"
+        android:layout_alignEnd="@+id/locationLabel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Update Event"
+        android:id="@+id/updateEventLabel"
+        android:layout_below="@+id/myDTLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Name"
+        android:id="@+id/updateNameLabel"
+        android:layout_below="@+id/updateEventLabel"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/updateNameEditText"
+        android:layout_below="@+id/updateNameLabel"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Date/Time"
+        android:id="@+id/updateDTLabel"
+        android:layout_below="@+id/updateNameEditText"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/updateDTEditText"
+        android:layout_below="@+id/updateDTLabel"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Location"
+        android:id="@+id/updateLocationLabel"
+        android:layout_below="@+id/updateDTEditText"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/updateLocationEditText"
+        android:layout_below="@+id/updateLocationLabel"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/updateDTEditText" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update Event Details"
+        android:id="@+id/updateDetailsButton"
+        android:layout_below="@+id/updateLocationEditText"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Join This Event"
+        android:id="@+id/joinEventButton"
+        android:layout_below="@+id/updateDetailsButton"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
