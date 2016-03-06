@@ -55,7 +55,8 @@
         android:text="Search For Classes"
         android:id="@+id/classSearchButton"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/myEventsLabel" />
+        android:layout_toEndOf="@+id/myEventsLabel"
+        android:onClick="onSearchForClassClick" />
 
     <TextView
         android:layout_width="wrap_content"

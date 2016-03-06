@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.schedlit.schedlit.classSearch"
+    tools:showIn="@layout/activity_class_search">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Class Search"
+        android:id="@+id/classSearchLabel"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <SearchView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/classSearchView"
+        android:layout_below="@+id/classSearchLabel"
+        android:layout_toEndOf="@+id/classSearchView"
+        android:queryHint="Search For Classes" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Can&apos;t Find Your Class? Add It Here!"
+        android:id="@+id/noClassLabel"
+        android:layout_below="@+id/classSearchView"
+        android:layout_marginTop="130dp"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Class Name"
+        android:id="@+id/classNameTextView"
+        android:layout_below="@+id/noClassLabel"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/classNameEditText"
+        android:layout_below="@+id/classNameTextView"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/noClassLabel" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Class"
+        android:id="@+id/addClassButton"
+        android:layout_below="@+id/classNameEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp"
+        android:onClick="onAddClassClick" />
+
+</RelativeLayout>
