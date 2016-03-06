@@ -8,10 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.firebase.client.DataSnapshot;
+import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
 
 public class loginPage extends AppCompatActivity {
 
@@ -21,10 +20,14 @@ public class loginPage extends AppCompatActivity {
     EditText pwordEditText;
     String emailAddress;
     String password;
+    boolean successfulLogin;
+    Firebase mRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
+
+        Firebase.setAndroidContext(this);
 
     }
 
@@ -43,9 +46,23 @@ public class loginPage extends AppCompatActivity {
     {
         emailAddress = emailEditText.getText().toString();
         password = pwordEditText.getText().toString();
-        boolean successfulLogIn  = true;
-        if (successfulLogIn){
-            startActivity(new Intent(getApplicationContext(), userHome.class));
+
+        mRef = new Firebase("https://testfb342016.firebaseio.com/");
+        mRef.authWithPassword(emailAddress, password, new Firebase.AuthResultHandler() {
+            @Override
+            public void onAuthenticated(AuthData authData) {
+                successfulLogin = true;
+            }
+            @Override
+            public void onAuthenticationError(FirebaseError firebaseError) {
+                // there was an error
+            }
+        });
+        if(successfulLogin)
+        {
+            Intent intent = new Intent(getApplicationContext(), userHome.class);
+            intent.putExtra("emailAddress", emailAddress);
+            startActivity(intent);
         }
     }
 
