@@ -17,16 +17,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
-        <activity
-            android:name=".chooseSchool"
-            android:parentActivityName=".loginPage"></activity>
         <activity
             android:name=".userHome"
             android:label="@string/title_activity_user_home"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-=======
->>>>>>> origin/master
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
     </application>
 
 </manifest>
